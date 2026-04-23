@@ -3,17 +3,10 @@ import Link from 'next/link';
 import { services } from '@/data/services';
 import { testimonials } from '@/data/testimonials';
 import { EmergencyBanner } from '@/components/ui/EmergencyBanner';
-import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
-import { ServiceCard } from '@/components/ui/ServiceCard';
-import { TestimonialCard } from '@/components/ui/TestimonialCard';
-import { FaqItem } from '@/components/ui/FaqItem';
-import { ContactForm } from '@/components/ui/ContactForm';
-import { TrustBar } from '@/components/ui/TrustBar';
-import { StatItem } from '@/components/ui/StatItem';
-import { SectionDivider } from '@/components/ui/SectionDivider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { ContactForm } from '@/components/ui/ContactForm';
+import { FaqItem } from '@/components/ui/FaqItem';
 
 const communes78 = require('@/data/communes/78-yvelines.json');
 const communes92 = require('@/data/communes/92-hauts-de-seine.json');
@@ -27,28 +20,24 @@ const topVilles = [
 
 const faqs = [
   {
-    q: 'Combien coute un depannage de plomberie en Ile-de-France ?',
-    a: 'Le cout depend de la nature de l\'intervention et de l\'urgence. Nous etablissons un devis transparent et detaille avant chaque intervention. Pas de frais caches.',
+    q: 'Combien coute un depannage de plomberie ?',
+    a: 'Le cout depend de la nature de l\'intervention. Nous etablissons un devis transparent et detaille avant chaque intervention. Pas de frais caches.',
   },
   {
-    q: 'Quelle est la reglementation Qualigaz pour une chaudiere gaz ?',
-    a: 'La certification Qualigaz impose des regles strictes d\'installation et de maintenance des equipements gaz. Notre habilitation vous garantit le respect des normes de securite en vigueur.',
+    q: 'Quelle est la reglementation Qualigaz ?',
+    a: 'La certification Qualigaz impose des regles strictes d\'installation et de maintenance des equipements gaz. Notre habilitation garantit le respect des normes de securite.',
   },
   {
-    q: 'La climatisation reversible est-elle adaptee aux appartements parisiens ?',
-    a: 'Oui. Nous proposons des solutions compacts specialement concues pour les espaces reduits. Le systeme split mural est ideal : silencieux, esthetique et sans travaux lourds.',
+    q: 'La climatisation reversible est-elle adaptee aux appartements ?',
+    a: 'Oui. Nous proposons des solutions compacts specialement concues pour les espaces reduits. Le systeme split mural est ideal : silencieux et sans travaux lourds.',
   },
   {
     q: 'Intervenez-vous le week-end et les jours feries ?',
-    a: 'Oui, nous assurons une permanence 24 heures sur 24, 7 jours sur 7, y compris les week-ends et jours feries. En cas d\'urgence, nous intervenons dans les plus brefs delais.',
+    a: 'Oui, nous assurons une permanence 24h/24 et 7j/7, y compris les week-ends et jours feries.',
   },
   {
-    q: 'Quelle est votre zone de couverture exacte ?',
-    a: 'Nous intervenons dans l\'ensemble des 8 departements d\'Ile-de-France : Paris (75), Seine-et-Marne (77), Yvelines (78), Essonne (91), Hauts-de-Seine (92), Seine-Saint-Denis (93), Val-de-Marne (94) et Val-d\'Oise (95).',
-  },
-  {
-    q: 'Comment savoir si ma chaudiere doit etre remplacee ?',
-    a: 'Plusieurs signes doivent vous alerter : age superieur a 15 ans, hausse de la facture d\'energie, bruits anormaux, fuite d\'eau. Lors de notre visite, nous realisons un diagnostic complet.',
+    q: 'Quelle est votre zone de couverture ?',
+    a: 'Nous intervenons dans l\'ensemble des 8 departements d\'Ile-de-France.',
   },
 ];
 
@@ -57,342 +46,278 @@ export default function HomePage() {
     <>
       <EmergencyBanner />
 
-      {/* Hero — Asymmetric split with warm editorial feel */}
-      <section className="relative bg-foreground overflow-hidden">
-        {/* Watermark */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-          <span className="text-[20rem] md:text-[30rem] font-serif text-white/[0.025] leading-none tracking-tighter">
-            IDF
-          </span>
-        </div>
+      {/* Hero — Bold, white, massive typography */}
+      <section className="relative bg-white overflow-hidden">
+        {/* Decorative blur shape */}
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+        
+        <div className="max-w-6xl mx-auto px-6 pt-20 pb-24 md:pt-28 md:pb-32 relative">
+          <ScrollReveal>
+            <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-6">
+              Certifie Qualigaz — Ile-de-France
+            </p>
+          </ScrollReveal>
 
-        <div className="relative max-w-6xl mx-auto">
-          <div className="flex min-h-[85vh]">
-            {/* Main content */}
-            <div className="flex-1 px-6 py-20 md:py-28 lg:py-32 flex flex-col justify-center">
-              <ScrollReveal>
-                <p className="text-white/50 text-sm font-medium mb-5 tracking-[0.12em] uppercase">
-                  Artisan certifie Qualigaz — Chatou, IDF
-                </p>
-              </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-foreground max-w-4xl mb-8">
+              Plombier & Chauffagiste en Ile-de-France
+            </h1>
+          </ScrollReveal>
 
-              <ScrollReveal delay={100}>
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-normal tracking-tight leading-[1.1] mb-6 text-white">
-                  Plombier, chauffagiste et climaticien en Ile-de-France
-                </h1>
-              </ScrollReveal>
+          <ScrollReveal delay={200}>
+            <p className="text-lg md:text-xl text-muted leading-relaxed max-w-xl mb-10">
+              Intervention rapide a Chatou, Versailles, Nanterre et partout en IDF.
+              Installation, depannage et entretien par un artisan certifie.
+            </p>
+          </ScrollReveal>
 
-              <ScrollReveal delay={200}>
-                <p className="text-base md:text-lg text-white/55 leading-relaxed mb-10 max-w-lg">
-                  Intervention rapide dans les Yvelines, les Hauts-de-Seine et le Val-d&apos;Oise.
-                  Installation, depannage et entretien par un artisan certifie.
-                </p>
-              </ScrollReveal>
-
-              <ScrollReveal delay={300}>
-                <div className="flex flex-wrap gap-4 mb-12">
-                  <Button href="#devis" variant="primary" size="lg">
-                    Demander un devis gratuit
-                  </Button>
-                  <Button href="tel:+33102030405" variant="secondary" size="lg">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    01 02 03 04 05
-                  </Button>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal delay={400}>
-                <TrustBar />
-              </ScrollReveal>
+          <ScrollReveal delay={300}>
+            <div className="flex flex-wrap gap-4">
+              <Button href="#devis" variant="primary" size="lg">
+                Demander un devis
+              </Button>
+              <Button href="tel:+33102030405" variant="secondary" size="lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                01 02 03 04 05
+              </Button>
             </div>
-
-            {/* Accent strip */}
-            <div className="hidden lg:block w-24 xl:w-32 bg-accent/90 relative">
-              <div className="absolute inset-0 bg-gradient-to-b from-accent via-accent/80 to-accent/60" />
-            </div>
-          </div>
-        </div>
-
-        {/* Trust pill overlapping into next section */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 hidden md:block">
-          <div className="bg-surface border border-border rounded-full px-8 py-3 shadow-tactile flex items-center gap-6 text-xs text-muted">
-            <span className="flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-              Qualigaz
-            </span>
-            <span className="w-px h-3 bg-border" />
-            <span className="flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              15 ans d&apos;exp.
-            </span>
-            <span className="w-px h-3 bg-border" />
-            <span className="flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              30 min de reponse
-            </span>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Services */}
-      <Section id="services" padding="lg" className="pt-20 md:pt-24">
-        <Container>
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div className="lg:sticky lg:top-28">
-              <ScrollReveal>
-                <p className="text-sm font-medium text-accent mb-2 tracking-wide uppercase">Nos metiers</p>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.5rem] font-normal tracking-tight mb-4 text-foreground">
-                  Ce qu&apos;on fait
-                </h2>
-                <p className="text-muted leading-relaxed">
-                  Trois corps de metier, une seule equipe. Nous intervenons sur toutes vos installations
-                  de confort thermique et sanitaire en Ile-de-France.
-                </p>
-              </ScrollReveal>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {services.map((s, i) => (
-                <ScrollReveal key={s.slug} delay={i * 80}>
-                  <ServiceCard
-                    slug={s.slug}
-                    label={s.label}
-                    description={s.description}
-                    icon={s.icon}
-                  />
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      <SectionDivider />
-
-      {/* Zone d'intervention */}
-      <Section id="zone" padding="lg" background="surface">
-        <Container>
+      {/* Services — Numbered list, editorial */}
+      <section id="services" className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
           <ScrollReveal>
-            <div className="max-w-xl mb-12">
-              <p className="text-sm font-medium text-accent mb-2 tracking-wide uppercase">Zone d&apos;intervention</p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.5rem] font-normal tracking-tight mb-4 text-foreground">
-                Ou intervenons-nous ?
-              </h2>
-              <p className="text-muted leading-relaxed">
-                Base a Chatou dans les Yvelines, nous couvrons l&apos;ensemble de l&apos;Ile-de-France
-                avec une reactivite optimale sur l&apos;ouest parisien.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <ScrollReveal delay={0}>
-              <DeptColumn code="78" name="Yvelines" communes={communes78.slice(0, 10)} />
-            </ScrollReveal>
-            <ScrollReveal delay={80}>
-              <DeptColumn code="92" name="Hauts-de-Seine" communes={communes92.slice(0, 10)} />
-            </ScrollReveal>
-            <ScrollReveal delay={160}>
-              <DeptColumn code="95" name="Val-d&apos;Oise" communes={communes95.slice(0, 10)} />
-            </ScrollReveal>
-          </div>
-        </Container>
-      </Section>
-
-      <SectionDivider />
-
-      {/* Engagements */}
-      <Section id="confiance" padding="lg">
-        <Container>
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
-            {/* Text content */}
-            <div className="lg:col-span-3">
-              <ScrollReveal>
-                <p className="text-sm font-medium text-accent mb-2 tracking-wide uppercase">Nos engagements</p>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.5rem] font-normal tracking-tight mb-6 text-foreground">
-                  Un artisan, pas une plateforme
-                </h2>
-                <p className="text-muted leading-relaxed mb-10">
-                  Pas d&apos;intermediaire, pas de commissionnaire. Vous appelez, c&apos;est moi qui reponds
-                  et qui interviens. C&apos;est la difference entre un artisan et une plateforme.
-                </p>
-              </ScrollReveal>
-
-              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-7">
-                {[
-                  { title: 'Disponible 24h/24', text: 'Une urgence ne previent pas. Joignable a toute heure, tous les jours.' },
-                  { title: 'Devis transparent', text: 'Diagnostic clair et devis detaille avant toute intervention.' },
-                  { title: 'Certifie Qualigaz', text: 'Habilite pour toute intervention sur vos installations gaz.' },
-                  { title: 'Intervention rapide', text: 'Souvent le jour meme de votre appel, partout en IDF.' },
-                ].map((item, i) => (
-                  <ScrollReveal key={item.title} delay={i * 80}>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-foreground">{item.title}</h4>
-                      <p className="text-sm text-muted leading-relaxed">{item.text}</p>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-
-            {/* Stats card — overlapping editorial feel */}
-            <div className="lg:col-span-2 lg:-mr-6 xl:-mr-12">
-              <ScrollReveal delay={200}>
-                <div className="bg-warm border border-border rounded-lg p-8 md:p-10 shadow-tactile">
-                  <div className="flex items-start gap-4 mb-8">
-                    <div className="w-11 h-11 rounded-md bg-foreground text-background flex items-center justify-center flex-shrink-0">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-base mb-1 text-foreground">Certification Qualigaz</h4>
-                      <p className="text-sm text-muted leading-relaxed">
-                        Cette certification est votre garantie de securite pour toute intervention sur
-                        vos installations gaz. Nos techniciens sont habilites en conformite avec la reglementation.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="border-t border-border pt-8 grid grid-cols-2 gap-8">
-                    <StatItem number="15+" label="Annees d&apos;experience" />
-                    <StatItem number="2000+" label="Clients en IDF" />
-                    <StatItem number="30 min" label="Temps de reponse" />
-                    <StatItem number="24/7" label="Disponibilite" />
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      <SectionDivider />
-
-      {/* Testimonials */}
-      <Section padding="lg" background="surface">
-        <Container>
-          <ScrollReveal>
-            <div className="max-w-xl mb-12">
-              <p className="text-sm font-medium text-accent mb-2 tracking-wide uppercase">Temoignages</p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.5rem] font-normal tracking-tight text-foreground">
-                Ils nous ont fait confiance
+            <div className="mb-16">
+              <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos services</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+                Ce qu&apos;on fait
               </h2>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.slice(0, 3).map((t, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="bg-surface border border-border rounded-lg px-6 py-2 h-full">
-                  <TestimonialCard
-                    text={t.text}
-                    author={t.author}
-                    location={t.ville}
-                    rating={t.rating}
-                  />
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <SectionDivider />
-
-      {/* FAQ */}
-      <Section padding="lg">
-        <Container>
-          <div className="max-w-2xl mx-auto">
-            <ScrollReveal>
-              <div className="text-center mb-12">
-                <p className="text-sm font-medium text-accent mb-2 tracking-wide uppercase">FAQ</p>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.5rem] font-normal tracking-tight text-foreground">
-                  Questions frequentes
-                </h2>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <div className="border-b border-border">
-                {faqs.map((faq, i) => (
-                  <FaqItem key={i} question={faq.q} answer={faq.a} />
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </Section>
-
-      <SectionDivider />
-
-      {/* Form */}
-      <Section id="devis" padding="lg" background="surface">
-        <Container>
-          <div className="max-w-2xl mx-auto">
-            <ScrollReveal>
-              <div className="mb-10">
-                <p className="text-sm font-medium text-accent mb-2 tracking-wide uppercase">Devis gratuit</p>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.5rem] font-normal tracking-tight mb-3 text-foreground">
-                  Parlons de votre projet
-                </h2>
-                <p className="text-muted">
-                  Decrivez votre besoin, nous vous recontactons sous 24h avec un devis detaille.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <ContactForm />
-            </ScrollReveal>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Final CTA */}
-      <Section padding="xl" background="primary">
-        <Container>
-          <div className="max-w-2xl mx-auto text-center">
-            <ScrollReveal>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.5rem] font-normal tracking-tight mb-4 text-white">
-                Une urgence ?
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <p className="text-base md:text-lg text-white/60 mb-10">
-                Notre equipe est disponible 24h/24 et 7j/7 pour tous vos depannages en Ile-de-France.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <Button href="tel:+33102030405" variant="inverse" size="lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                01 02 03 04 05
-              </Button>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Top villes liens */}
-      <Section padding="md">
-        <Container>
-          <ScrollReveal>
-            <div className="mb-8">
-              <p className="text-sm font-medium text-accent mb-2 tracking-wide uppercase">Interventions par ville</p>
-              <h2 className="font-serif text-2xl font-normal tracking-tight text-foreground">
-                Nos zones d&apos;intervention
-              </h2>
-            </div>
-          </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
-            {topVilles.map((ville: any, i: number) => (
-              <ScrollReveal key={ville.slug} delay={i * 30}>
+          <div className="divide-y divide-border">
+            {services.map((s, i) => (
+              <ScrollReveal key={s.slug} delay={i * 80}>
                 <Link
-                  href={`/plombier/${ville.slug}`}
-                  className="flex items-center justify-between px-4 py-3 bg-surface border border-border rounded-md hover:border-foreground/20 hover:-translate-y-0.5 transition-all duration-200 shadow-tactile hover:shadow-tactile-hover"
+                  href={`/${s.slug}/chatou`}
+                  className="group flex items-start md:items-center gap-6 md:gap-10 py-8 md:py-10 transition-colors hover:bg-border-light/50 -mx-6 px-6 rounded-lg"
                 >
-                  <span className="text-sm font-medium text-foreground">Plombier {ville.nom}</span>
-                  <span className="text-xs text-muted">{ville.codePostal}</span>
+                  <span className="text-3xl md:text-4xl font-bold text-border group-hover:text-accent transition-colors tabular-nums">
+                    0{i + 1}
+                  </span>
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
+                      {s.label}
+                    </h3>
+                    <p className="text-muted text-sm md:text-base max-w-2xl">{s.description}</p>
+                  </div>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-border group-hover:text-accent group-hover:translate-x-1 transition-all flex-shrink-0 mt-1 md:mt-0"
+                  >
+                    <path d="M5 12h14"/><path d="M12 5l7 7-7 7"/>
+                  </svg>
                 </Link>
               </ScrollReveal>
             ))}
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
+
+      {/* Zone — Dark section */}
+      <section id="zone" className="bg-dark text-white">
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+          <ScrollReveal>
+            <div className="mb-16">
+              <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Zone d&apos;intervention</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Ou intervenons-nous ?
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-12">
+            <DeptColumn code="78" name="Yvelines" communes={communes78.slice(0, 10)} />
+            <DeptColumn code="92" name="Hauts-de-Seine" communes={communes92.slice(0, 10)} />
+            <DeptColumn code="95" name="Val-d&apos;Oise" communes={communes95.slice(0, 10)} />
+          </div>
+        </div>
+      </section>
+
+      {/* Engagements */}
+      <section id="confiance" className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+          <ScrollReveal>
+            <div className="mb-16 max-w-xl">
+              <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos engagements</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
+                Un artisan, pas une plateforme
+              </h2>
+              <p className="text-muted text-lg">
+                Vous appelez, c&apos;est moi qui reponds. Pas d&apos;intermediaire, pas de surprise.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid sm:grid-cols-2 gap-10 md:gap-16">
+            {[
+              { title: '24h/24, 7j/7', text: 'Joignable a toute heure, tous les jours de l&apos;annee. Une urgence ne previent pas.' },
+              { title: 'Devis transparent', text: 'Diagnostic clair et prix annonce avant toute intervention. Pas de frais caches.' },
+              { title: 'Certifie Qualigaz', text: 'Habilite pour toute intervention sur vos installations gaz. Conformite garantie.' },
+              { title: 'Intervention rapide', text: 'Souvent le jour meme de votre appel. Base a Chatou, reactive sur tout l&apos;ouest parisien.' },
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 80}>
+                <div className="border-t-2 border-accent pt-6">
+                  <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-muted leading-relaxed">{item.text}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats — Orange section */}
+      <section className="bg-accent">
+        <div className="max-w-6xl mx-auto px-6 py-20 md:py-24">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {[
+              { number: '15+', label: 'Annees d\'experience' },
+              { number: '2000+', label: 'Clients en IDF' },
+              { number: '30 min', label: 'Temps de reponse' },
+              { number: '24/7', label: 'Disponibilite' },
+            ].map((stat, i) => (
+              <ScrollReveal key={stat.label} delay={i * 80}>
+                <div className="text-center md:text-left">
+                  <div className="text-4xl md:text-5xl font-bold text-white mb-1">{stat.number}</div>
+                  <div className="text-white/70 text-sm">{stat.label}</div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials — Dark */}
+      <section className="bg-dark text-white">
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+          <ScrollReveal>
+            <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Temoignages</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-16">
+              Ils nous ont fait confiance
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            {testimonials.slice(0, 3).map((t, i) => (
+              <ScrollReveal key={i} delay={i * 100}>
+                <div className="border-t border-white/10 pt-6">
+                  <p className="text-white/80 text-lg leading-relaxed mb-6">
+                    &ldquo;{t.text}&rdquo;
+                  </p>
+                  <div className="text-sm">
+                    <span className="font-semibold text-white">{t.author}</span>
+                    <span className="text-white/40"> — {t.ville}</span>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-white">
+        <div className="max-w-3xl mx-auto px-6 py-24 md:py-32">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">FAQ</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+                Questions frequentes
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <div className="border-b border-border">
+              {faqs.map((faq, i) => (
+                <FaqItem key={i} question={faq.q} answer={faq.a} />
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Form */}
+      <section id="devis" className="bg-border-light">
+        <div className="max-w-2xl mx-auto px-6 py-24 md:py-32">
+          <ScrollReveal>
+            <div className="mb-12">
+              <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Devis gratuit</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-3">
+                Parlons de votre projet
+              </h2>
+              <p className="text-muted text-lg">
+                Decrivez votre besoin, nous vous recontactons sous 24h.
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <ContactForm />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Final CTA — Massive dark section */}
+      <section className="bg-dark text-white">
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-40 text-center">
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+              Une urgence ?
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <p className="text-lg md:text-xl text-white/50 mb-10 max-w-xl mx-auto">
+              Disponible 24h/24 et 7j/7 pour tous vos depannages en Ile-de-France.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={200}>
+            <Button href="tel:+33102030405" variant="primary" size="lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              01 02 03 04 05
+            </Button>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Top villes */}
+      <section className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+          <ScrollReveal>
+            <h3 className="text-lg font-bold tracking-tight text-foreground mb-6">
+              Interventions par ville
+            </h3>
+          </ScrollReveal>
+          <div className="flex flex-wrap gap-3">
+            {topVilles.map((ville: any) => (
+              <Link
+                key={ville.slug}
+                href={`/plombier/${ville.slug}`}
+                className="px-4 py-2 bg-border-light rounded-md text-sm text-foreground hover:bg-foreground hover:text-white transition-colors"
+              >
+                {ville.nom} ({ville.codePostal})
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
@@ -400,15 +325,15 @@ export default function HomePage() {
 function DeptColumn({ code, name, communes }: { code: string; name: string; communes: any[] }) {
   return (
     <div>
-      <h3 className="text-xs font-semibold text-muted uppercase tracking-widest mb-4">
+      <h3 className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-5">
         {name} ({code})
       </h3>
-      <ul className="space-y-2">
+      <ul className="space-y-2.5">
         {communes.map((c) => (
           <li key={c.slug}>
             <Link
               href={`/plombier/${c.slug}`}
-              className="text-sm text-muted hover:text-foreground transition-colors"
+              className="text-sm text-white/50 hover:text-white transition-colors"
             >
               {c.nom}
             </Link>

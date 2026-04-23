@@ -2,16 +2,15 @@ import React from 'react';
 
 interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
-  variant?: 'primary' | 'secondary' | 'inverse';
+  variant?: 'primary' | 'secondary' | 'white';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
-  className?: string;
 }
 
 const variantMap = {
-  primary: 'bg-accent text-white hover:bg-accent-hover shadow-tactile',
-  secondary: 'bg-transparent border border-foreground/20 text-foreground hover:bg-foreground/5',
-  inverse: 'bg-white text-foreground hover:bg-warm shadow-tactile',
+  primary: 'bg-accent hover:bg-accent-hover text-white',
+  secondary: 'bg-transparent border border-foreground/20 text-foreground hover:bg-foreground hover:text-white',
+  white: 'bg-white text-foreground hover:bg-white/90',
 };
 
 const sizeMap = {
@@ -24,7 +23,7 @@ export function Button({ href, variant = 'primary', size = 'md', children, class
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all duration-200 active:translate-y-0 hover:-translate-y-0.5 ${variantMap[variant]} ${sizeMap[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all duration-200 ${variantMap[variant]} ${sizeMap[size]} ${className}`}
       {...props}
     >
       {children}

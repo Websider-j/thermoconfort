@@ -11,34 +11,24 @@ export function FaqItem({ question, answer }: FaqItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`border-t border-border transition-colors duration-200 ${isOpen ? 'bg-warm' : ''}`}>
+    <div className="border-t border-border">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-5 px-2 text-left"
+        className="w-full flex items-center justify-between py-6 text-left"
         aria-expanded={isOpen}
       >
-        <span className={`text-base pr-4 transition-colors duration-200 ${isOpen ? 'text-foreground font-semibold' : 'text-foreground font-medium'}`}>
+        <span className={`text-base md:text-lg pr-8 transition-colors ${isOpen ? 'text-foreground font-semibold' : 'text-foreground font-medium'}`}>
           {question}
         </span>
-        <span className="flex-shrink-0 relative w-5 h-5 text-muted">
-          <span
-            className="absolute top-1/2 left-0 w-5 h-0.5 bg-current transition-transform duration-200"
-            style={{ transform: isOpen ? 'translateY(-50%) rotate(0deg)' : 'translateY(-50%) rotate(0deg)' }}
-          />
-          <span
-            className="absolute top-1/2 left-0 w-5 h-0.5 bg-current transition-transform duration-200"
-            style={{ transform: isOpen ? 'translateY(-50%) rotate(90deg) scaleX(0)' : 'translateY(-50%) rotate(90deg)' }}
-          />
+        <span className={`flex-shrink-0 text-muted transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </span>
       </button>
       <div
         className="overflow-hidden transition-all duration-300 ease-out"
-        style={{
-          maxHeight: isOpen ? '500px' : '0px',
-          opacity: isOpen ? 1 : 0,
-        }}
+        style={{ maxHeight: isOpen ? '300px' : '0px', opacity: isOpen ? 1 : 0 }}
       >
-        <div className="px-2 pb-5 text-muted text-sm leading-relaxed max-w-2xl">
+        <div className="pb-6 text-muted leading-relaxed">
           {answer}
         </div>
       </div>
