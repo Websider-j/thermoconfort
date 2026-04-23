@@ -21,18 +21,30 @@ function ServiceIcon({ icon }: { icon: string }) {
 
 export function ServiceCard({ slug, label, description, icon, active }: ServiceCardProps) {
   return (
-    <article className={`group p-8 rounded-lg transition-colors duration-150 ${active ? 'bg-warm border border-accent/20' : 'bg-surface border border-border hover:border-foreground/10'}`}>
-      <div className="w-10 h-10 rounded-md bg-foreground text-background flex items-center justify-center mb-5">
+    <article className={`group p-7 md:p-8 rounded-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-tactile-hover ${active ? 'bg-warm border-2 border-accent/20' : 'bg-surface border border-border hover:border-accent/30'}`}>
+      <div className="w-11 h-11 rounded-md bg-foreground text-background flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-accent">
         <ServiceIcon icon={icon} />
       </div>
       <h3 className="text-lg font-bold mb-2 tracking-tight">{label}</h3>
-      <p className="text-muted text-sm leading-relaxed mb-4">{description}</p>
+      <p className="text-muted text-sm leading-relaxed mb-5">{description}</p>
       <Link
         href={`/${slug}/chatou`}
-        className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
+        className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
       >
         Voir les interventions
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="transition-transform duration-200 group-hover:translate-x-1"
+        >
+          <path d="M5 12h14"/><path d="M12 5l7 7-7 7"/>
+        </svg>
       </Link>
     </article>
   );

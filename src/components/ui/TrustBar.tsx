@@ -23,7 +23,7 @@ export function TrustBar({ items }: TrustBarProps) {
   const displayItems = items || defaultItems;
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/80">
+    <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/70">
       {displayItems.map((item, i) => (
         <span key={i} className="inline-flex items-center gap-1.5">
           {item.icon}

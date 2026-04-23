@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { BrandMark } from './BrandMark';
 
 export function Footer() {
   return (
@@ -7,7 +8,10 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-8">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h4 className="text-base font-bold mb-3">ThermoConfort</h4>
+            <div className="flex items-center gap-2.5 mb-3">
+              <BrandMark size={24} className="text-accent" />
+              <h4 className="text-base font-bold">ThermoConfort</h4>
+            </div>
             <p className="text-muted text-sm leading-relaxed">
               Artisan plombier, chauffagiste et climaticien en Ile-de-France.
               Certifie Qualigaz. Intervention rapide et devis gratuit.
