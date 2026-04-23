@@ -1,0 +1,38 @@
+export const services = [
+  {
+    slug: 'plombier',
+    label: 'Plomberie',
+    labelSingulier: 'plombier',
+    description: 'Dépannage d\'urgence, recherche et réparation de fuites, débouchage de canalisations, installation de sanitaires et rénovation complète de votre réseau d\'eau.',
+    icon: 'droplet',
+    metaTitle: '{{service}} à {{ville}} ({{cp}}) — Intervention 24h/24 | ThermoConfort',
+    metaDescription: 'Besoin d\'un {{service}} à {{ville}} ({{cp}}) ? ThermoConfort, artisan certifié Qualigaz, intervient rapidement. Dépannage, installation et rénovation. Devis gratuit.',
+  },
+  {
+    slug: 'chauffagiste',
+    label: 'Chauffage',
+    labelSingulier: 'chauffagiste',
+    description: 'Installation et entretien de chaudières gaz, fioul et électrique — certifié Qualigaz. Pose de pompes à chaleur, dépannage de radiateurs et optimisation de vos installations.',
+    icon: 'flame',
+    metaTitle: '{{service}} à {{ville}} ({{cp}}) — Installation & Dépannage | ThermoConfort',
+    metaDescription: '{{service}} certifié Qualigaz à {{ville}} ({{cp}}). Installation, entretien et dépannage de chaudières et pompes à chaleur. Intervention rapide en Île-de-France.',
+  },
+  {
+    slug: 'climatisation',
+    label: 'Climatisation',
+    labelSingulier: 'climaticien',
+    description: 'Installation de systèmes de climatisation réversibles, entretien annuel obligatoire, recharge en fluide frigorigène et réparation de vos équipements de froid.',
+    icon: 'snowflake',
+    metaTitle: '{{service}} à {{ville}} ({{cp}}) — Installation Réversible | ThermoConfort',
+    metaDescription: 'Installation et entretien de climatisation réversible à {{ville}} ({{cp}}). Solutions adaptées aux appartements et maisons. Devis gratuit. Certifié Qualigaz.',
+  },
+  {
+    slug: 'depannage-urgent',
+    label: 'Dépannage urgent',
+    labelSingulier: 'dépannage urgent',
+    description: 'Intervention d\'urgence 24h/24 et 7j/7 pour tous vos problèmes de plomberie, chauffage et climatisation. Réponse rapide et diagnostic immédiat sur toute l\'Île-de-France.',
+    icon: 'alert-triangle',
+    metaTitle: 'Dépannage urgent à {{ville}} ({{cp}}) — 24h/24 | ThermoConfort',
+    metaDescription: 'Dépannage urgent plomberie, chauffage et climatisation à {{ville}} ({{cp}}). Intervention en 30 min. Disponible 24h/24, 7j/7. Artisan certifié Qualigaz.',
+  },
+];
