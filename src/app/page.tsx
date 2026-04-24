@@ -84,8 +84,8 @@ export default function HomePage() {
             </div>
 
             <ScrollReveal delay={200}>
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-border-light">
+              <div className="relative lg:translate-x-8">
+                <div className="aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden bg-border-light">
                   <img
                     src="/images/hero-plumber.jpg"
                     alt="Artisan plombier au travail"
@@ -93,10 +93,10 @@ export default function HomePage() {
                   />
                 </div>
                 {/* Floating badge */}
-                <div className="absolute -bottom-4 -left-4 md:bottom-6 md:-left-6 bg-white rounded-lg px-4 py-3 shadow-lg border border-border">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                    <span className="text-xs font-semibold text-foreground">Intervention en 30 min</span>
+                <div className="absolute bottom-6 -left-4 md:-left-6 bg-white rounded-xl px-5 py-3 shadow-xl border border-border">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-accent" />
+                    <span className="text-sm font-semibold text-foreground">Intervention en 30 min</span>
                   </div>
                 </div>
               </div>
@@ -105,28 +105,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services — Numbered list with image */}
+      {/* Services — Numbered list */}
       <section id="services" className="bg-white">
         <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-end mb-16">
-            <ScrollReveal>
-              <div>
-                <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos services</p>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
-                  Ce qu&apos;on fait
-                </h2>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <div className="aspect-[16/9] rounded-xl overflow-hidden bg-border-light">
-                <img
-                  src="/images/tools.jpg"
-                  alt="Outils de plomberie et chauffage"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal>
+            <div className="mb-16">
+              <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos services</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+                Ce qu&apos;on fait
+              </h2>
+            </div>
+          </ScrollReveal>
 
           <div className="divide-y divide-border">
             {services.map((s, i) => (
@@ -162,16 +151,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Zone — Dark section with image */}
-      <section id="zone" className="bg-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <img
-            src="/images/technician.jpg"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32 relative">
+      {/* Zone — Dark section */}
+      <section id="zone" className="bg-dark text-white">
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
           <ScrollReveal>
             <div className="mb-16">
               <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Zone d&apos;intervention</p>
@@ -189,31 +171,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Engagements with image */}
+      {/* Engagements */}
       <section id="confiance" className="bg-white">
         <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16">
-            <ScrollReveal>
-              <div>
-                <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos engagements</p>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
-                  Un artisan, pas une plateforme
-                </h2>
-                <p className="text-muted text-lg">
-                  Vous appelez, c&apos;est moi qui reponds. Pas d&apos;intermediaire, pas de surprise.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <div className="aspect-[4/3] rounded-xl overflow-hidden bg-border-light">
-                <img
-                  src="/images/wrench.jpg"
-                  alt="Outils professionnels"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal>
+            <div className="mb-16 max-w-xl">
+              <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos engagements</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
+                Un artisan, pas une plateforme
+              </h2>
+              <p className="text-muted text-lg">
+                Vous appelez, c&apos;est moi qui reponds. Pas d&apos;intermediaire, pas de surprise.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid sm:grid-cols-2 gap-10 md:gap-16">
             {[
