@@ -33,34 +33,55 @@ export default function LocalLandingPage({ data, content, allServices }: Props) 
     <>
       <EmergencyBanner text={`Urgence ${service.label.toLowerCase()} en ${deptName(commune.departement)} ? Intervention 24h/24`} />
 
-      {/* Hero */}
+      {/* Hero with image */}
       <section className="relative bg-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[80px] pointer-events-none" />
-        <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28 relative">
-          <ScrollReveal>
-            <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-4">
-              {commune.nom} ({commune.codePostal})
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={100}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-foreground max-w-4xl mb-6">
-              {service.labelSingulier.charAt(0).toUpperCase() + service.labelSingulier.slice(1)} a {commune.nom}
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={200}>
-            <p className="text-lg text-muted leading-relaxed max-w-xl mb-8">
-              {content.intro}
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={300}>
-            <div className="flex flex-wrap gap-4">
-              <Button href="#devis" variant="primary" size="lg">Demander un devis</Button>
-              <Button href="tel:+33102030405" variant="secondary" size="lg">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                01 02 03 04 05
-              </Button>
+        <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <ScrollReveal>
+                <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-4">
+                  {commune.nom} ({commune.codePostal})
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.05] text-foreground mb-6">
+                  {service.labelSingulier.charAt(0).toUpperCase() + service.labelSingulier.slice(1)} a {commune.nom}
+                </h1>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <p className="text-lg text-muted leading-relaxed mb-8 max-w-md">
+                  {content.intro}
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={300}>
+                <div className="flex flex-wrap gap-3">
+                  <Button href="#devis" variant="primary" size="lg">Demander un devis</Button>
+                  <Button href="tel:+33102030405" variant="secondary" size="lg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    01 02 03 04 05
+                  </Button>
+                </div>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-border-light">
+                  <img
+                    src="/images/hero-plumber.jpg"
+                    alt={`${service.label} a ${commune.nom}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -left-4 md:bottom-6 md:-left-6 bg-white rounded-lg px-4 py-3 shadow-lg border border-border">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                    <span className="text-xs font-semibold text-foreground">Intervention en {tempsIntervention} min</span>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -233,9 +254,17 @@ export default function LocalLandingPage({ data, content, allServices }: Props) 
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-dark text-white">
-        <div className="max-w-6xl mx-auto px-6 py-24 md:py-40 text-center">
+      {/* CTA with background image */}
+      <section className="bg-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
+          <img
+            src="/images/plumbing.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-dark/80" />
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-40 text-center relative">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
               Besoin d&apos;une intervention a {commune.nom} ?

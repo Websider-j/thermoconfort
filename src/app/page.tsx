@@ -46,56 +46,87 @@ export default function HomePage() {
     <>
       <EmergencyBanner />
 
-      {/* Hero — Bold, white, massive typography */}
+      {/* Hero — Split with image */}
       <section className="relative bg-white overflow-hidden">
-        {/* Decorative blur shape */}
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
-        
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-24 md:pt-28 md:pb-32 relative">
-          <ScrollReveal>
-            <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-6">
-              Certifie Qualigaz — Ile-de-France
-            </p>
-          </ScrollReveal>
+        <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <ScrollReveal>
+                <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-5">
+                  Certifie Qualigaz — Ile-de-France
+                </p>
+              </ScrollReveal>
 
-          <ScrollReveal delay={100}>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-foreground max-w-4xl mb-8">
-              Plombier & Chauffagiste en Ile-de-France
-            </h1>
-          </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight leading-[1.05] text-foreground mb-6">
+                  Plombier & Chauffagiste en Ile-de-France
+                </h1>
+              </ScrollReveal>
 
-          <ScrollReveal delay={200}>
-            <p className="text-lg md:text-xl text-muted leading-relaxed max-w-xl mb-10">
-              Intervention rapide a Chatou, Versailles, Nanterre et partout en IDF.
-              Installation, depannage et entretien par un artisan certifie.
-            </p>
-          </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <p className="text-lg text-muted leading-relaxed mb-8 max-w-md">
+                  Intervention rapide a Chatou, Versailles, Nanterre et partout en IDF.
+                  Installation, depannage et entretien par un artisan certifie.
+                </p>
+              </ScrollReveal>
 
-          <ScrollReveal delay={300}>
-            <div className="flex flex-wrap gap-4">
-              <Button href="#devis" variant="primary" size="lg">
-                Demander un devis
-              </Button>
-              <Button href="tel:+33102030405" variant="secondary" size="lg">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                01 02 03 04 05
-              </Button>
+              <ScrollReveal delay={300}>
+                <div className="flex flex-wrap gap-3">
+                  <Button href="#devis" variant="primary" size="lg">
+                    Demander un devis
+                  </Button>
+                  <Button href="tel:+33102030405" variant="secondary" size="lg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    01 02 03 04 05
+                  </Button>
+                </div>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-border-light">
+                  <img
+                    src="/images/hero-plumber.jpg"
+                    alt="Artisan plombier au travail"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Floating badge */}
+                <div className="absolute -bottom-4 -left-4 md:bottom-6 md:-left-6 bg-white rounded-lg px-4 py-3 shadow-lg border border-border">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                    <span className="text-xs font-semibold text-foreground">Intervention en 30 min</span>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* Services — Numbered list, editorial */}
+      {/* Services — Numbered list with image */}
       <section id="services" className="bg-white">
         <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <ScrollReveal>
-            <div className="mb-16">
-              <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos services</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
-                Ce qu&apos;on fait
-              </h2>
-            </div>
-          </ScrollReveal>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-end mb-16">
+            <ScrollReveal>
+              <div>
+                <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos services</p>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+                  Ce qu&apos;on fait
+                </h2>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <div className="aspect-[16/9] rounded-xl overflow-hidden bg-border-light">
+                <img
+                  src="/images/tools.jpg"
+                  alt="Outils de plomberie et chauffage"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </ScrollReveal>
+          </div>
 
           <div className="divide-y divide-border">
             {services.map((s, i) => (
@@ -131,9 +162,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Zone — Dark section */}
-      <section id="zone" className="bg-dark text-white">
-        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+      {/* Zone — Dark section with image */}
+      <section id="zone" className="bg-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img
+            src="/images/technician.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32 relative">
           <ScrollReveal>
             <div className="mb-16">
               <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Zone d&apos;intervention</p>
@@ -151,20 +189,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Engagements */}
+      {/* Engagements with image */}
       <section id="confiance" className="bg-white">
         <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <ScrollReveal>
-            <div className="mb-16 max-w-xl">
-              <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos engagements</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
-                Un artisan, pas une plateforme
-              </h2>
-              <p className="text-muted text-lg">
-                Vous appelez, c&apos;est moi qui reponds. Pas d&apos;intermediaire, pas de surprise.
-              </p>
-            </div>
-          </ScrollReveal>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16">
+            <ScrollReveal>
+              <div>
+                <p className="text-sm font-semibold text-accent tracking-wide uppercase mb-3">Nos engagements</p>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
+                  Un artisan, pas une plateforme
+                </h2>
+                <p className="text-muted text-lg">
+                  Vous appelez, c&apos;est moi qui reponds. Pas d&apos;intermediaire, pas de surprise.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <div className="aspect-[4/3] rounded-xl overflow-hidden bg-border-light">
+                <img
+                  src="/images/wrench.jpg"
+                  alt="Outils professionnels"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </ScrollReveal>
+          </div>
 
           <div className="grid sm:grid-cols-2 gap-10 md:gap-16">
             {[
@@ -275,9 +324,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Final CTA — Massive dark section */}
-      <section className="bg-dark text-white">
-        <div className="max-w-6xl mx-auto px-6 py-24 md:py-40 text-center">
+      {/* Final CTA — Dark with background image */}
+      <section className="bg-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
+          <img
+            src="/images/plumbing.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-dark/80" />
+        <div className="max-w-6xl mx-auto px-6 py-24 md:py-40 text-center relative">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
               Une urgence ?
