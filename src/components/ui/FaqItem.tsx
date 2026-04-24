@@ -11,13 +11,13 @@ export function FaqItem({ question, answer }: FaqItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-t border-border">
+    <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-6 text-left"
+        className="w-full flex items-center justify-between py-5 px-4 text-left rounded-2xl hover:bg-white/30 transition-colors"
         aria-expanded={isOpen}
       >
-        <span className={`text-base md:text-lg pr-8 transition-colors ${isOpen ? 'text-foreground font-semibold' : 'text-foreground font-medium'}`}>
+        <span className={`text-base pr-8 transition-colors ${isOpen ? 'text-foreground font-semibold' : 'text-foreground font-medium'}`}>
           {question}
         </span>
         <span className={`flex-shrink-0 text-muted transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`}>
@@ -28,7 +28,7 @@ export function FaqItem({ question, answer }: FaqItemProps) {
         className="overflow-hidden transition-all duration-300 ease-out"
         style={{ maxHeight: isOpen ? '300px' : '0px', opacity: isOpen ? 1 : 0 }}
       >
-        <div className="pb-6 text-muted leading-relaxed">
+        <div className="px-4 pb-5 text-muted leading-relaxed">
           {answer}
         </div>
       </div>
