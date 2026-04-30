@@ -14,22 +14,33 @@ export function FaqItem({ question, answer }: FaqItemProps) {
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-5 px-4 text-left rounded-2xl hover:bg-white/30 transition-colors"
+        className={`w-full flex items-center justify-between py-5 px-4 text-left rounded-2xl transition-all duration-300 ${
+          isOpen ? 'bg-white/5' : 'hover:bg-white/5'
+        }`}
         aria-expanded={isOpen}
       >
-        <span className={`text-base pr-8 transition-colors ${isOpen ? 'text-foreground font-semibold' : 'text-foreground font-medium'}`}>
+        <span className={`text-base pr-8 transition-colors duration-300 ${isOpen ? 'text-white font-semibold' : 'text-white/80 font-medium'}`}>
           {question}
         </span>
-        <span className={`flex-shrink-0 text-muted transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <span className="flex-shrink-0 relative w-5 h-5 text-white/40">
+          <span
+            className="absolute top-1/2 left-0 w-5 h-0.5 bg-current transition-all duration-300"
+            style={{ transform: 'translateY(-50%)' }}
+          />
+          <span
+            className="absolute top-1/2 left-0 w-5 h-0.5 bg-current transition-all duration-300"
+            style={{ transform: isOpen ? 'translateY(-50%) scaleX(0)' : 'translateY(-50%) rotate(90deg)' }}
+          />
         </span>
       </button>
       <div
-        className="overflow-hidden transition-all duration-300 ease-out"
-        style={{ maxHeight: isOpen ? '300px' : '0px', opacity: isOpen ? 1 : 0 }}
+        className="grid transition-all duration-300 ease-out"
+        style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
       >
-        <div className="px-4 pb-5 text-muted leading-relaxed">
-          {answer}
+        <div className="overflow-hidden">
+          <div className="px-4 pb-5 text-white/50 leading-relaxed">
+            {answer}
+          </div>
         </div>
       </div>
     </div>

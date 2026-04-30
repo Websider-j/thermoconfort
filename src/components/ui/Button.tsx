@@ -8,9 +8,9 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 const variantMap = {
-  primary: 'bg-accent hover:bg-accent-hover text-white shadow-lg shadow-accent/30',
-  secondary: 'glass hover:bg-white/40 text-foreground',
-  glass: 'glass-dark hover:bg-white/10 text-white border-white/20',
+  primary: 'bg-accent hover:bg-accent-hover text-white glow-teal hover:glow-teal-strong active:scale-[0.97]',
+  secondary: 'glass hover:bg-white/10 text-white border-white/20',
+  glass: 'glass-card hover:bg-white/10 text-white',
 };
 
 const sizeMap = {
@@ -23,7 +23,7 @@ export function Button({ href, variant = 'primary', size = 'md', children, class
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 ${variantMap[variant]} ${sizeMap[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 hover:-translate-y-0.5 ${variantMap[variant]} ${sizeMap[size]} ${className}`}
       {...props}
     >
       {children}

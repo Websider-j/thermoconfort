@@ -15,12 +15,12 @@ export function Footer() {
               </p>
             </div>
             <div>
-              <h4 className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-4">Services</h4>
+              <h4 className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-4">Navigation</h4>
               <ul className="space-y-3">
-                <li><Link href="/plombier/chatou" className="text-sm text-white/60 hover:text-white transition-colors">Plomberie</Link></li>
-                <li><Link href="/chauffagiste/chatou" className="text-sm text-white/60 hover:text-white transition-colors">Chauffage</Link></li>
-                <li><Link href="/climatisation/chatou" className="text-sm text-white/60 hover:text-white transition-colors">Climatisation</Link></li>
-                <li><Link href="/depannage-urgent/chatou" className="text-sm text-white/60 hover:text-white transition-colors">Depannage urgent</Link></li>
+                <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Accueil</Link></li>
+                <li><Link href="/qui-suis-je" className="text-sm text-white/60 hover:text-white transition-colors">Qui suis-je</Link></li>
+                <li><a href="/#services" className="text-sm text-white/60 hover:text-white transition-colors">Services</a></li>
+                <li><a href="/#devis" className="text-sm text-white/60 hover:text-white transition-colors">Devis gratuit</a></li>
               </ul>
             </div>
             <div>
